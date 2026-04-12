@@ -8,11 +8,13 @@ interface WeatherData {
   icon: string;
 }
 
+const FALLBACK: WeatherData = { temp: 18, description: 'partly cloudy', icon: '02d' };
+
 function getBraaiMessage(temp: number): string {
   if (temp >= 25) return "Perfect braai weather, bru!";
   if (temp >= 18) return "Lekker day for a braai in the park!";
   if (temp >= 12) return "Still braai weather if you're brave enough!";
-  if (temp >= 5) return "Potjie weather — time for something warm";
+  if (temp >= 5) return "Potjie weather \u2014 time for something warm";
   if (temp >= -5) return "Eish, not even a potjie can fix this cold";
   return "Ag no, we didn't sign up for this!";
 }
@@ -34,11 +36,16 @@ function getWeatherEmoji(temp: number): string {
 }
 
 export default function BraaiWeather() {
-  const [weather, setWeather] = useState<WeatherData | null>(null);
+  const [weather, setWeather] = useState<WeatherData>(FALLBACK);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const API_KEY = import.meta.env.VITE_WEATHER_API_KEY || '';
+    if (!API_KEY) {
+      setLoading(false);
+      return;
+    }
+
     const url = `https://api.openweathermap.org/data/2.5/weather?q=Freiburg,DE&units=metric&appid=${API_KEY}`;
 
     fetch(url)
@@ -52,10 +59,7 @@ export default function BraaiWeather() {
           });
         }
       })
-      .catch(() => {
-        // Fallback mock data for demo
-        setWeather({ temp: 22, description: 'partly cloudy', icon: '02d' });
-      })
+      .catch(() => {})
       .finally(() => setLoading(false));
   }, []);
 
@@ -67,8 +71,6 @@ export default function BraaiWeather() {
     );
   }
 
-  if (!weather) return null;
-
   const WeatherIcon = getWeatherIcon(weather.icon);
   const emoji = getWeatherEmoji(weather.temp);
 
@@ -77,7 +79,7 @@ export default function BraaiWeather() {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="bg-gradient-to-r from-sa-green/5 to-sa-gold/5 dark:from-sa-green/15 dark:to-sa-gold/15 border border-sa-green/20 rounded-2xl p-6 md:p-8"
+      className="bg-white/80 dark:bg-dark-card/80 backdrop-blur-md border border-sa-green/20 rounded-2xl p-6 md:p-8 shadow-lg"
     >
       <div className="flex items-center justify-between flex-wrap gap-4">
         <div className="flex items-center gap-3">

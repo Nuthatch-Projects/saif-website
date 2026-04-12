@@ -32,7 +32,7 @@ export default function App() {
       <Hero />
 
       {/* Braai weather widget between hero and about */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-20">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12 relative z-20 mb-4">
         <BraaiWeather />
       </div>
 
