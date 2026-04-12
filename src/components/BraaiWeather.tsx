@@ -38,8 +38,7 @@ export default function BraaiWeather() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Using OpenWeatherMap API — replace YOUR_API_KEY with actual key
-    const API_KEY = 'YOUR_API_KEY';
+    const API_KEY = import.meta.env.VITE_WEATHER_API_KEY || '';
     const url = `https://api.openweathermap.org/data/2.5/weather?q=Freiburg,DE&units=metric&appid=${API_KEY}`;
 
     fetch(url)
