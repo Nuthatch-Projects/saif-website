@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-sa-black: #000000;
+  --color-sa-gold: #FFB81C;
+  --color-sa-green: #007749;
+  --color-sa-red: #DE3831;
+  --color-sa-blue: #002395;
+  --color-sa-white: #FFFFFF;
+  --color-forest: #1a3a2a;
+  --color-warm-bg: #FFF8F0;
+  --color-dark-bg: #111111;
+  --color-dark-surface: #1a1a1a;
+  --color-dark-card: #222222;
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-accent: 'Caveat', cursive;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+.flag-gradient {
+  background: linear-gradient(
+    90deg,
+    #000000 0%,
+    #000000 16.66%,
+    #FFB81C 16.66%,
+    #FFB81C 33.33%,
+    #007749 33.33%,
+    #007749 50%,
+    #FFFFFF 50%,
+    #FFFFFF 66.66%,
+    #DE3831 66.66%,
+    #DE3831 83.33%,
+    #002395 83.33%,
+    #002395 100%
+  );
+}
+
+.flag-gradient-smooth {
+  background: linear-gradient(
+    90deg,
+    #000000,
+    #FFB81C,
+    #007749,
+    #FFFFFF,
+    #DE3831,
+    #002395
+  );
+}
+
+.text-gradient-sa {
+  background: linear-gradient(90deg, #007749, #FFB81C, #DE3831);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+::-webkit-scrollbar-thumb {
+  background: #007749;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FFB81C;
+}
