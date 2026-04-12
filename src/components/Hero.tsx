@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion';
+import tableMountain from '../assets/images/table-mountain.avif';
+import freiburg from '../assets/images/freiburg.jpg';
 
 export default function Hero() {
   return (
@@ -8,20 +10,21 @@ export default function Hero() {
     >
       {/* Split background */}
       <div className="absolute inset-0 flex">
-        {/* South Africa side — warm tones */}
-        <div className="w-1/2 bg-gradient-to-br from-amber-600 via-orange-500 to-yellow-600 relative">
-          <div className="absolute inset-0 opacity-20 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iYSIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIj48cGF0aCBkPSJNMCAyMGgyME0yMCAwdjIwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMC41Ii8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCBmaWxsPSJ1cmwoI2EpIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIvPjwvc3ZnPg==')]" />
-          {/* Placeholder for SA imagery */}
-          <div className="absolute bottom-10 left-10 text-white/30 text-sm font-body">
-            [Table Mountain / Savanna imagery]
-          </div>
+        {/* South Africa side — Table Mountain */}
+        <div className="w-1/2 relative">
+          <img
+            src={tableMountain}
+            alt="Table Mountain, Cape Town"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
         </div>
-        {/* Black Forest side — deep greens */}
-        <div className="w-1/2 bg-gradient-to-bl from-green-900 via-emerald-800 to-green-950 relative">
-          <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTMwIDVMMjAgMjVoMjBMMzAgNXpNMzAgMjVMMjAgNDVoMjBMMzAgMjV6IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMSIvPjwvc3ZnPg==')]" />
-          <div className="absolute bottom-10 right-10 text-white/30 text-sm font-body">
-            [Black Forest / misty pines imagery]
-          </div>
+        {/* Black Forest side — Freiburg */}
+        <div className="w-1/2 relative">
+          <img
+            src={freiburg}
+            alt="Freiburg im Breisgau"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
         </div>
       </div>
 
@@ -84,22 +87,6 @@ export default function Hero() {
           >
             Upcoming Events
           </a>
-        </motion.div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ repeat: Infinity, duration: 2 }}
-            className="w-6 h-10 border-2 border-white/40 rounded-full flex justify-center pt-2"
-          >
-            <div className="w-1.5 h-1.5 bg-sa-gold rounded-full" />
-          </motion.div>
         </motion.div>
       </div>
     </section>

@@ -17,8 +17,8 @@ export const NAV_LINKS = [
 ] as const;
 
 export const SOCIAL_LINKS = {
-  whatsapp: 'https://chat.whatsapp.com/INVITE_LINK',
-  facebook: 'https://facebook.com/groups/SAiF',
+  whatsapp: 'https://chat.whatsapp.com/FToaUJiXJr8LUzxdXMi2yw?mode=gi_t',
+  facebook: 'https://www.facebook.com/groups/saif.freiburg',
   instagram: 'https://instagram.com/saif_freiburg',
 } as const;
 
@@ -65,19 +65,19 @@ export const FLAGSHIP_EVENTS = [
   {
     icon: '\u{2600}\u{FE0F}',
     title: 'SAiF Summer Braai',
-    date: 'Saturday, 19 July 2026',
+    date: 'Saturday, 25 July 2026 — from 15:00',
     description:
       'Our annual highlight! Gather around the fire for a proper South African braai with boerewors, sosaties, and all the trimmings. Bring your camp chairs and your best braai stories.',
-    location: 'Seepark, Freiburg',
+    location: 'Ganter Biergarten, Leo-Wohleb-Straße 4, 79098 Freiburg',
     color: 'sa-gold',
   },
   {
     icon: '\u{1F384}',
     title: 'SAiF Christmas Party',
-    date: 'Saturday, 12 December 2026',
+    date: 'Date TBC',
     description:
       'A warm, festive get-together to close the year. Think mince pies meet Gl\u00FChwein, carols meet kuier, and good old South African hospitality in the heart of winter.',
-    location: 'TBA — Freiburg',
+    location: 'Location TBC',
     color: 'sa-red',
   },
 ] as const;
