@@ -13,7 +13,7 @@ export default function Footer() {
               <img
                 src={saifLogo}
                 alt="SAiF — South Africans in Freiburg"
-                className="h-12 w-auto brightness-0 invert"
+                className="h-16 w-auto brightness-150 drop-shadow-[0_0_12px_rgba(255,184,28,0.4)]"
               />
             </div>
             <p className="text-sm leading-relaxed mb-4">

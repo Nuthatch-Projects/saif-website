@@ -39,14 +39,19 @@ export default function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 md:h-20">
+          <div className="flex items-center justify-between h-18 md:h-22">
             {/* Logo */}
-            <a href="#home" className="flex items-center group">
+            <a href="#home" className="flex items-center gap-2.5 group">
               <img
                 src={saifLogo}
                 alt="SAiF — South Africans in Freiburg"
-                className="h-10 md:h-14 w-auto"
+                className="h-12 md:h-16 w-auto dark:brightness-150 dark:drop-shadow-[0_0_8px_rgba(255,184,28,0.3)] transition-all"
               />
+              <span className="hidden sm:block text-xs font-medium leading-tight border-l border-gray-300 dark:border-gray-600 pl-2.5">
+                <span className="text-gray-700 dark:text-gray-300">South Africans</span>
+                <br />
+                <span className="text-gray-700 dark:text-gray-300">in Freiburg</span>
+              </span>
             </a>
 
             {/* Desktop Nav */}
