@@ -79,7 +79,7 @@ export default function Hero() {
             href="#community"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-sa-gold hover:bg-yellow-400 text-black font-bold px-8 py-4 rounded-full text-lg transition-all hover:scale-105 shadow-lg"
           >
-            Join 50+ South Africans in Freiburg
+            Join 300+ South Africans in Freiburg
           </a>
           <a
             href="#events"
