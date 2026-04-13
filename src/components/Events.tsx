@@ -5,7 +5,8 @@ import { FaWhatsapp } from 'react-icons/fa';
 
 export default function Events() {
   return (
-    <section id="events" className="py-20 md:py-28 bg-white dark:bg-dark-surface">
+    <section className="py-20 md:py-28 bg-white dark:bg-dark-surface">
+  <div id="events" className="relative -top-20 md:-top-28" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flag-gradient-smooth h-1 w-24 mx-auto rounded-full mb-16" />
 
