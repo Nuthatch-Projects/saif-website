@@ -9,6 +9,7 @@ import LekkerLinks from './components/LekkerLinks';
 import SaffaPhrases from './components/SaffaPhrases';
 import BraaiWeather from './components/BraaiWeather';
 import FloatingSocial from './components/FloatingSocial';
+import WorldCupBanner from './components/WorldCupBanner';
 import Footer from './components/Footer';
 
 export default function App() {
@@ -44,6 +45,7 @@ export default function App() {
       <LekkerLinks />
       <Footer />
       <FloatingSocial />
+      <WorldCupBanner />
     </div>
   );
 }
