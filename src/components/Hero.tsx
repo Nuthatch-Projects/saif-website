@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import tableMountain from '../assets/images/table-mountain.avif';
-import freiburg from '../assets/images/freiburg.jpg';
+import capeTown from '../assets/images/cape-town.png';
+import freiburgForest from '../assets/images/freiburg-forest.png';
 
 export default function Hero() {
   return (
@@ -13,16 +13,16 @@ export default function Hero() {
         {/* South Africa side — Table Mountain */}
         <div className="w-1/2 relative">
           <img
-            src={tableMountain}
-            alt="Table Mountain, Cape Town"
+            src={capeTown}
+            alt="Cape Town panorama at sunset"
             className="absolute inset-0 w-full h-full object-cover"
           />
         </div>
         {/* Black Forest side — Freiburg */}
         <div className="w-1/2 relative">
           <img
-            src={freiburg}
-            alt="Freiburg im Breisgau"
+            src={freiburgForest}
+            alt="Freiburg and the Black Forest"
             className="absolute inset-0 w-full h-full object-cover"
           />
         </div>
