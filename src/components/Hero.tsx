@@ -48,9 +48,9 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-white leading-tight mb-6"
         >
-          Home Away
+          South Africans in Freiburg — Connect, Meet, and Feel
           <br />
-          From{' '}
+          at{' '}
           <span className="text-gradient-sa bg-clip-text" style={{
             background: 'linear-gradient(90deg, #007749, #FFB81C, #DE3831)',
             WebkitBackgroundClip: 'text',
@@ -66,7 +66,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          A proudly South African community thriving in the heart of the Black Forest
+          Join our community for braais, events, and everything lekker in the Black Forest
         </motion.p>
 
         <motion.div
@@ -79,7 +79,7 @@ export default function Hero() {
             href="#community"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-sa-gold hover:bg-yellow-400 text-black font-bold px-8 py-4 rounded-full text-lg transition-all hover:scale-105 shadow-lg"
           >
-            Join the Community
+            Join 50+ South Africans in Freiburg
           </a>
           <a
             href="#events"
