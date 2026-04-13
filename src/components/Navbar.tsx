@@ -4,6 +4,7 @@ import { HiMenuAlt3, HiX } from 'react-icons/hi';
 import { FaWhatsapp } from 'react-icons/fa';
 import { BsMoonStarsFill, BsSunFill } from 'react-icons/bs';
 import { NAV_LINKS, SOCIAL_LINKS } from '../utils/constants';
+import saifLogo from '../assets/images/saif-logo.png';
 
 interface NavbarProps {
   darkMode: boolean;
@@ -40,16 +41,12 @@ export default function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
-            <a href="#home" className="flex items-center gap-2 group">
-              <span className="font-heading text-2xl md:text-3xl font-extrabold tracking-tight">
-                <span className="text-sa-green">S</span>
-                <span className="text-sa-gold">A</span>
-                <span className="text-sa-blue text-xl md:text-2xl">i</span>
-                <span className="text-sa-red text-xl md:text-2xl">F</span>
-              </span>
-              <span className="hidden sm:block text-xs text-gray-500 dark:text-gray-400 leading-tight border-l border-gray-300 dark:border-gray-600 pl-2 ml-1">
-                South Africans<br />in Freiburg
-              </span>
+            <a href="#home" className="flex items-center group">
+              <img
+                src={saifLogo}
+                alt="SAiF — South Africans in Freiburg"
+                className="h-10 md:h-14 w-auto"
+              />
             </a>
 
             {/* Desktop Nav */}

@@ -1,5 +1,6 @@
 import { FaWhatsapp, FaFacebookF, FaInstagram } from 'react-icons/fa';
 import { NAV_LINKS, SOCIAL_LINKS } from '../utils/constants';
+import saifLogo from '../assets/images/saif-logo.png';
 
 export default function Footer() {
   return (
@@ -9,12 +10,11 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="mb-4">
-              <span className="font-heading text-3xl font-extrabold">
-                <span className="text-sa-green">S</span>
-                <span className="text-sa-gold">A</span>
-                <span className="text-sa-blue text-2xl">i</span>
-                <span className="text-sa-red text-2xl">F</span>
-              </span>
+              <img
+                src={saifLogo}
+                alt="SAiF — South Africans in Freiburg"
+                className="h-12 w-auto brightness-0 invert"
+              />
             </div>
             <p className="text-sm leading-relaxed mb-4">
               South Africans in Freiburg — a proudly South African community
