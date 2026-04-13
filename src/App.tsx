@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -11,8 +11,22 @@ import BraaiWeather from './components/BraaiWeather';
 import FloatingSocial from './components/FloatingSocial';
 import WorldCupBanner from './components/WorldCupBanner';
 import Footer from './components/Footer';
+import SplashScreen from './components/SplashScreen';
 
 export default function App() {
+  const [showSplash, setShowSplash] = useState(() => {
+    // Only show splash once per session
+    if (typeof window !== 'undefined') {
+      return !sessionStorage.getItem('saif-splash-seen');
+    }
+    return true;
+  });
+
+  const handleSplashComplete = useCallback(() => {
+    setShowSplash(false);
+    sessionStorage.setItem('saif-splash-seen', 'true');
+  }, []);
+
   const [darkMode, setDarkMode] = useState(() => {
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('saif-dark-mode');
@@ -26,6 +40,10 @@ export default function App() {
     document.documentElement.classList.toggle('dark', darkMode);
     localStorage.setItem('saif-dark-mode', String(darkMode));
   }, [darkMode]);
+
+  if (showSplash) {
+    return <SplashScreen onComplete={handleSplashComplete} />;
+  }
 
   return (
     <div className="min-h-screen bg-white dark:bg-dark-bg text-gray-900 dark:text-gray-100 transition-colors duration-300">
