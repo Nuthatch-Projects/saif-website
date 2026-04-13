@@ -39,7 +39,7 @@ export default function CommunityHub() {
   return (
     <section
   id="community"
-  className="scroll-mt-45 md:scroll-mt-55 py-20 md:py-28 bg-white dark:bg-dark-surface"
+  className="scroll-mt-25 md:scroll-mt-35 py-20 md:py-28 bg-white dark:bg-dark-surface"
 >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flag-gradient-smooth h-1 w-24 mx-auto rounded-full mb-16" />
