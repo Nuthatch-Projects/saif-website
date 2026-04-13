@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-24 md:pb-32"
     >
       {/* Split background */}
       <div className="absolute inset-0 flex">
@@ -33,15 +33,6 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="font-accent text-2xl md:text-3xl text-sa-gold mb-4"
-        >
-          Welkom by SAiF
-        </motion.p>
-
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -51,11 +42,14 @@ export default function Hero() {
           Connect, Meet, and Feel
           <br />
           at{' '}
-          <span className="text-gradient-sa bg-clip-text" style={{
-            background: 'linear-gradient(90deg, #007749, #FFB81C, #DE3831)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-          }}>
+          <span
+            className="text-gradient-sa bg-clip-text"
+            style={{
+              background: 'linear-gradient(90deg, #007749, #FFB81C, #DE3831)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+            }}
+          >
             Home
           </span>
         </motion.h1>
