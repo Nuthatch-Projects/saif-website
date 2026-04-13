@@ -38,7 +38,7 @@ const platforms = [
 export default function CommunityHub() {
   return (
     <section className="py-20 md:py-28 bg-white dark:bg-dark-surface">
-  <div id="community" className="relative -top-20 md:-top-28" />
+  <div id="community" className="relative -top-30 md:-top-38" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flag-gradient-smooth h-1 w-24 mx-auto rounded-full mb-16" />
 
