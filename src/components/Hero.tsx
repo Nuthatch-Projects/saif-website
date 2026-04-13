@@ -48,7 +48,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-white leading-tight mb-6"
         >
-          South Africans in Freiburg — Connect, Meet, and Feel
+          Connect, Meet, and Feel
           <br />
           at{' '}
           <span className="text-gradient-sa bg-clip-text" style={{
