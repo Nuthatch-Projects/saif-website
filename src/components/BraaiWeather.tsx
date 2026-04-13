@@ -14,7 +14,7 @@ function getBraaiMessage(temp: number): string {
   if (temp >= 25) return "Perfect braai weather, bru!";
   if (temp >= 18) return "Lekker day for a braai in the park!";
   if (temp >= 12) return "Still braai weather if you're brave enough!";
-  if (temp >= 5) return "Potjie weather \u2014 time for something warm";
+  if (temp >= 5) return "Potjie weather — time for something warm";
   if (temp >= -5) return "Eish, not even a potjie can fix this cold";
   return "Ag no, we didn't sign up for this!";
 }
@@ -65,8 +65,10 @@ export default function BraaiWeather() {
 
   if (loading) {
     return (
-      <div className="bg-gradient-to-r from-sa-green/10 to-sa-gold/10 dark:from-sa-green/20 dark:to-sa-gold/20 rounded-2xl p-6 animate-pulse">
-        <div className="h-6 bg-gray-200 dark:bg-gray-700 rounded w-3/4 mx-auto" />
+      <div className="max-w-5xl mx-auto px-4">
+        <div className="bg-gradient-to-r from-sa-green/10 to-sa-gold/10 dark:from-sa-green/20 dark:to-sa-gold/20 rounded-2xl p-6 animate-pulse">
+          <div className="h-6 bg-gray-200 dark:bg-gray-700 rounded w-3/4 mx-auto" />
+        </div>
       </div>
     );
   }
@@ -75,37 +77,39 @@ export default function BraaiWeather() {
   const emoji = getWeatherEmoji(weather.temp);
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="bg-white/80 dark:bg-dark-card/80 backdrop-blur-md border border-sa-green/20 rounded-2xl p-6 md:p-8 shadow-lg"
-    >
-      <div className="flex items-center justify-between flex-wrap gap-4">
-        <div className="flex items-center gap-3">
-          <div className="text-4xl md:text-5xl text-sa-green dark:text-sa-gold">
-            <WeatherIcon />
-          </div>
-          <div>
-            <div className="flex items-center gap-2">
-              <WiThermometer className="text-2xl text-sa-red" />
-              <span className="font-heading text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">
-                {weather.temp}°C
-              </span>
+    <div className="max-w-5xl mx-auto px-4">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="bg-white/80 dark:bg-dark-card/80 backdrop-blur-md border border-sa-green/20 rounded-2xl p-6 md:p-8 shadow-lg"
+      >
+        <div className="flex items-center justify-between flex-wrap gap-4">
+          <div className="flex items-center gap-3">
+            <div className="text-4xl md:text-5xl text-sa-green dark:text-sa-gold">
+              <WeatherIcon />
             </div>
-            <p className="text-sm text-gray-500 dark:text-gray-400 capitalize">
-              Freiburg — {weather.description}
+            <div>
+              <div className="flex items-center gap-2">
+                <WiThermometer className="text-2xl text-sa-red" />
+                <span className="font-heading text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">
+                  {weather.temp}°C
+                </span>
+              </div>
+              <p className="text-sm text-gray-500 dark:text-gray-400 capitalize">
+                Freiburg — {weather.description}
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <span className="text-2xl">{emoji}</span>
+            <p className="font-accent text-lg md:text-xl text-sa-green dark:text-sa-gold max-w-xs">
+              {getBraaiMessage(weather.temp)}
             </p>
           </div>
         </div>
-
-        <div className="flex items-center gap-2">
-          <span className="text-2xl">{emoji}</span>
-          <p className="font-accent text-lg md:text-xl text-sa-green dark:text-sa-gold max-w-xs">
-            {getBraaiMessage(weather.temp)}
-          </p>
-        </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </div>
   );
 }
